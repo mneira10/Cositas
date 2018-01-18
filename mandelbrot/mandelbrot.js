@@ -1,5 +1,5 @@
-var canvx = 1600;
-var canvy = 800;
+var canvx = window.innerWidth;
+var canvy = window.innerHeight-40;
 
 function setup() { 
 	createCanvas(canvx,canvy);
@@ -48,10 +48,16 @@ function setup() {
 	}
 
 	updatePixels();
-
-
+	textSize(32);
+	fill(255);
+	text("MANDELBROT",width/2-250,40);
+	textSize(20);
+	text("click anywhere on the MANDELBROT image to see the corresponding Julia Set",10,height-20);
+	console.log("Window width: " , window.innerWidth , " Window height: " , window.innerHeight);
 
 }
+
+
 
 
 
@@ -120,5 +126,12 @@ function drawJulia(px,py){
 	stroke(255);
 	line(width/2,0,width/2,canvy);
 	console.log("done Julia");
+	textSize(32);
+	fill(255);
+	var titleJ = "JULIA : c = " + Number(px).toFixed(2) + " + " + Number(py).toFixed(2) +" i";  
+	text(titleJ,width/2+20,40);
+	textSize(32);
+	fill(255);
+	text("MANDELBROT",width/2-250,40);
 
 }
