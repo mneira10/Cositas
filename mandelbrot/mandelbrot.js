@@ -1,4 +1,4 @@
-var canvx = window.innerWidth;
+var canvx = window.innerWidth-20;
 var canvy = window.innerHeight-40;
 
 function setup() { 
@@ -51,7 +51,7 @@ function setup() {
 	textSize(32);
 	fill(255);
 	text("MANDELBROT",width/2-250,40);
-	textSize(20);
+	textSize(15);
 	text("click anywhere on the MANDELBROT image to see the corresponding Julia Set",10,height-20);
 	console.log("Window width: " , window.innerWidth , " Window height: " , window.innerHeight);
 
@@ -124,7 +124,9 @@ function drawJulia(px,py){
 
 	updatePixels();
 	stroke(255);
+	strokeWeight(4);
 	line(width/2,0,width/2,canvy);
+	strokeWeight(1);
 	console.log("done Julia");
 	textSize(32);
 	fill(255);
